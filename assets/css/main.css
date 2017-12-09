@@ -28,21 +28,25 @@ body {
   height: 60em;
 }
 
+/*Caja reto - Versión desktop*/
+/*Caja general -total*/
 .blue_bird {
 	padding-top: 10em;
 	padding-right: 70em;
 }
 
-/*Caja reto - Versión desktop*/
-
+/*Caja texto*/
 .total1{
-	margin-right: 100px;
+	margin-left: -6em;
 }
+
 .reto {
 	background-color: #FFF;
-	padding: 2em;
+	padding: 4em;
 	margin-right: 3em;
+	display: inline-block;
 }
+
  h2 {
  	font-weight: bolder;
  }
@@ -60,3 +64,26 @@ body {
 }
 
 /*Caja twitter - Versión desktop*/
+/*Caja general -twitter_box-*/
+	.twitter_box {
+	margin-top: -1.4em;
+	display: inline-block;
+	}
+
+	.total2 {
+	background-color: #FFF;
+	padding: 1.6em;
+	margin-right: 1em;
+	margin-top: 1.4em;
+}
+
+/*Caja texto*/
+.tweet {
+	background-color: #FFF;
+	padding: 1.2em;
+	margin-right: 3em;
+}
+
+.twitear {
+	margin-top:5px;
+}
