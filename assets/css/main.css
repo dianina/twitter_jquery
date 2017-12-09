@@ -72,7 +72,7 @@ body {
 
 	.total2 {
 	background-color: #FFF;
-	padding: 1.6em;
+	padding: 1.3em;
 	margin-right: 1em;
 	margin-top: 1.4em;
 }
@@ -80,10 +80,14 @@ body {
 /*Caja texto*/
 .tweet {
 	background-color: #FFF;
-	padding: 1.2em;
+	padding: 0.2em;
 	margin-right: 3em;
 }
 
 .twitear {
 	margin-top:5px;
+}
+
+.comments label {
+	font-size: 20px;
 }
