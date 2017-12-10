@@ -1,34 +1,35 @@
 $(document).ready(function() {
 
-	/*contador 140 caract. con keydown*/
-	init_contadorTa("taComentario","contadorTaComentario", 140);
+/*contador 140 caract. con keydown*/
+    $(function(){
+    var longitud_max = 140;
+    var chars_actuales = $("#comentarios").val().length;
 
-function init_contadorTa(idtextarea, idcontador,max)
-{
-    $("#"+idtextarea).keydown(function()
-            {
-                updateContadorTa(idtextarea, idcontador,max);
+    $("#contador").html(longitud_max + " caracteres restantes");
+
+    $("#comentarios").keydown(function(){
+        var chars_nuevos = longitud_max - $("#comentarios").val().length;
+/*Cuenta regresiva -charact. restantes*/
+        $("#contador").html(chars_nuevos + " caracteres restantes");
+/*Cuenta regresiva de 50 a 10 char. restantes lo vuelve rojo*/
+        if(chars_nuevos <= 50 && chars_nuevos > 10){
+            $("#contador").css("color","#FF0000");
+        }
+/*Cuenta regresiva de 10 a 0 char. restantes lo vuelve azul*/
+        else if(chars_nuevos <= 10 && chars_nuevos > 0){
+            $("#contador").css("color","#0000FF");
+        }
+/*De lo contrario quedan char. color negro*/
+        else{
+            $("#contador").css("color","#000");
+        }
+
+        if(chars_nuevos <= 0){
+            $("#comentarios").keypress(function(){
+                var texto = $("#comentarios").val().substr(0,24);
+                $("#comentarios").val(texto);
             });
-    
-    $("#"+idtextarea).change(function()
-    {
-            updateContadorTa(idtextarea, idcontador,max);
+        }
     });
-    
-}
-
-function updateContadorTa(idtextarea, idcontador,max)
-{
-    var contador = $("#"+idcontador);
-    var ta =     $("#"+idtextarea);
-    contador.html("0/"+max);
-    
-    contador.html(ta.val().length+"/"+max);
-    if(parseInt(ta.val().length)>max)
-    {
-        ta.val(ta.val().substring(0,max-1));
-        contador.html(max+"/"+max);
-    }
-init_contadorTa("taComentario","contadorTaComentario", 140);
-}
+});
 });
